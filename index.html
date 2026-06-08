@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>SawInstan - SPK Metode SAW</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <!-- Identitas dengan running text + tanggal/bulan/tahun/jam -->
+    <div class="identitas">
+        <div class="datetime-wrapper">
+            <span class="datetime-label">WAKTU SISTEM</span>
+            <div class="datetime-display" id="liveDateTime">--:--:--</div>
+        </div>
+        <div class="running-container">
+            <div class="running-track" id="runningTextTrack"></div>
+        </div>
+        <div class="footer-identitas">Sistem Pendukung Keputusan • SAW</div>
+    </div>
+
+    <h1>SawInstan</h1>
+    <div class="subtitle">Metode SAW (Simple Additive Weighting) • Input nilai → Langsung ranking</div>
+
+    <!-- Kriteria -->
+    <div class="section">
+        <h2>1. Kriteria & Bobot</h2>
+        <div id="kriteria-list">
+            <div class="pesan-kosong">Belum ada kriteria. Klik "Tambah Kriteria" untuk mulai.</div>
+        </div>
+        <button class="btn-tambah" onclick="tambahKriteria()">+ Tambah Kriteria</button>
+    </div>
+
+    <!-- Alternatif -->
+    <div class="section">
+        <h2>2. Alternatif & Nilai</h2>
+        <div id="alternatif-list">
+            <div class="pesan-kosong">Belum ada alternatif. Klik "Tambah Alternatif" untuk mulai.</div>
+        </div>
+        <button class="btn-tambah" onclick="tambahAlternatif()">+ Tambah Alternatif</button>
+    </div>
+
+    <!-- Tombol Aksi -->
+    <div style="text-align: center; margin: 15px 0 5px;">
+        <button class="btn-hitung" onclick="hitungSAW()">Hitung & Ranking</button>
+        <button onclick="resetData()" style="background:#2d2d2d;">Reset Semua</button>
+    </div>
+
+    <!-- Hasil -->
+    <div id="hasil" class="hasil">
+        <h3>Hasil Perhitungan</h3>
+        <div style="color:#8a8f9e; font-size:14px;">Tambahkan kriteria dan alternatif terlebih dahulu, lalu klik "Hitung & Ranking"</div>
+    </div>
+
+    <footer>
+        Simple Additive Weighting • Bobot dinormalisasi otomatis • Benefit/Cost
+    </footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
